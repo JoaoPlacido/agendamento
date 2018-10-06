@@ -14,9 +14,13 @@ export class AppComponent {
   pacienteService=new PacienteService;
   pacientes:Paciente[]=[];
   gravar(a:Paciente):void{
-    this.pacienteService.gravar(a);
-    this.pacientes.push(a);
-    this.paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
+    if(this.pacienteService.gravar(a)){
+      this.pacientes.push(a);
+      this.paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
+    }
+    else{
+      this.paciente.cpf="";
+    }
   }
 }
 
