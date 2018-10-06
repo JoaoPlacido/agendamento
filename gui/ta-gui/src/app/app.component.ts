@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgModule} from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ta-gui';
+  paciente: Paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
+}
+export class Paciente{
+  nome: string;
+  cpf: string;
+  idade: number;
+  rg:string;
+  data:string;
 }
