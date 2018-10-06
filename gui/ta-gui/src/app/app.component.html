@@ -30,3 +30,12 @@
   <td><button (click)="gravar(paciente)">Adicionar</button></td>
 </tr>
 </table>
+<ul>
+  <li *ngFor="let a of pacientes">
+    <span>{{a.nome}}</span>,
+    <span>{{a.cpf}}</span>,
+    <span>{{a.idade}}</span>,
+    <span>{{a.rg}}</span>,
+    <span>{{a.data}}</span>  
+  </li>
+</ul>

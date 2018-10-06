@@ -12,8 +12,10 @@ import {PacienteService} from './paciente.service';
 export class AppComponent {
   paciente: Paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
   pacienteService=new PacienteService;
+  pacientes:Paciente[]=[];
   gravar(a:Paciente):void{
     this.pacienteService.gravar(a);
+    this.pacientes.push(a);
     this.paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
   }
 }
