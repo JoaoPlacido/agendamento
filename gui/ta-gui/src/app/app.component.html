@@ -1,3 +1,4 @@
+<html   (mousemove)="onMove()">
 <h1>
   Agendamento
 </h1>
@@ -29,6 +30,11 @@
 <tr>
   <td><button (click)="gravar(paciente)">Adicionar</button></td>
 </tr>
+<tr>
+  <td *ngIf="pacienteJaAgendado">
+    Esse paciente ja foi agendado para essa data!
+  </td>
+</tr>
 </table>
 <ul>
   <li *ngFor="let a of pacientes">
@@ -39,3 +45,4 @@
     <span>{{a.data}}</span>  
   </li>
 </ul>
+</html>

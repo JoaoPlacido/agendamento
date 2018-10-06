@@ -13,14 +13,21 @@ export class AppComponent {
   paciente: Paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
   pacienteService=new PacienteService;
   pacientes:Paciente[]=[];
+  pacienteJaAgendado=false;
   gravar(a:Paciente):void{
     if(this.pacienteService.gravar(a)){
       this.pacientes.push(a);
       this.paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
+     
     }
     else{
       this.paciente.cpf="";
+      this.paciente.data="";
+      this.pacienteJaAgendado=true;
     }
+  }
+  onMove():void{
+    this.pacienteJaAgendado=false;
   }
 }
 
