@@ -10,8 +10,9 @@ import {PacienteService} from './paciente.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private pacienteService:PacienteService){}
+  
   paciente: Paciente={nome:"",cpf:"",idade:0,rg:"",data:""};
-  pacienteService=new PacienteService;
   pacientes:Paciente[]=[];
   pacienteJaAgendado=false;
   gravar(a:Paciente):void{
